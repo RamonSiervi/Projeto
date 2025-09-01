@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Seu Plano de Treinos</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script defer src="script.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="logo">MF</div>
+      <div>
+        <div class="kicker">Plano de Treinos</div>
+        <h1>Organizado e detalhado do jeito que você pediu</h1>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="btnTheme" class="btn">🌙 Alternar Tema</button>
+      <button id="btnExport" class="btn primary">📄 Exportar PDF</button>
+      <button id="btnUpload" class="btn">📤 Enviar Foto</button>
+    </div>
+  </header>
+
+  <main id="app" class="container">
+    <!-- Conteúdo gerado via JS -->
+  </main>
+
+  <footer class="app-footer">
+    <small>Feito sob medida • Você pode editar os vídeos no <code>script.js</code></small>
+  </footer>
+
+  <!-- Modal Upload -->
+  <div id="uploadModal" class="modal hidden">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2>Enviar Foto</h2>
+      <form id="uploadForm">
+        <label>Observação:</label>
+        <textarea name="observacao" required></textarea>
+        <label>Foto:</label>
+        <input type="file" name="foto" accept="image/*" required />
+        <button type="submit" class="btn primary">Enviar</button>
+      </form>
+      <div id="uploadStatus"></div>
+    </div>
+  </div>
+
+</body>
+</html>
