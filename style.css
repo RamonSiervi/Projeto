@@ -49,12 +49,9 @@ video{width:100%;border-radius:12px;background:#000}
 .section.peito .section-header{background:linear-gradient(90deg,#f59e0b,#f97316)}
 .section.ombro .section-header{background:linear-gradient(90deg,#10b981,#14b8a6)}
 
-/* Modal */
-.modal{display:flex;align-items:center;justify-content:center;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:50}
-.modal.hidden{display:none}
-.modal-content{background:var(--card);padding:20px;border-radius:16px;width:90%;max-width:400px;box-shadow:0 8px 20px rgba(0,0,0,.25)}
-.close{float:right;font-size:24px;font-weight:800;cursor:pointer}
-#uploadForm{display:grid;gap:12px}
-#uploadForm textarea{resize:vertical;min-height:60px;padding:8px;border-radius:8px;border:1px solid #ccc}
-#uploadForm input[type=file]{border:1px solid #ccc;padding:6px;border-radius:8px}
-#uploadStatus{margin-top:10px;font-size:14px}
+/* Print styles for PDF */
+@media print {
+  .app-header, .app-footer, video, .thumb, #btnTheme, #btnExport { display:none !important; }
+  body { background:#fff; color:#000; }
+  .section-header { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+}

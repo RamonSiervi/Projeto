@@ -23,7 +23,6 @@
     <div class="actions">
       <button id="btnTheme" class="btn">🌙 Alternar Tema</button>
       <button id="btnExport" class="btn primary">📄 Exportar PDF</button>
-      <button id="btnUpload" class="btn">📤 Enviar Foto</button>
     </div>
   </header>
 
@@ -35,21 +34,8 @@
     <small>Feito sob medida • Você pode editar os vídeos no <code>script.js</code></small>
   </footer>
 
-  <!-- Modal Upload -->
-  <div id="uploadModal" class="modal hidden">
-    <div class="modal-content">
-      <span id="closeModal" class="close">&times;</span>
-      <h2>Enviar Foto</h2>
-      <form id="uploadForm">
-        <label>Observação:</label>
-        <textarea name="observacao" required></textarea>
-        <label>Foto:</label>
-        <input type="file" name="foto" accept="image/*" required />
-        <button type="submit" class="btn primary">Enviar</button>
-      </form>
-      <div id="uploadStatus"></div>
-    </div>
-  </div>
-
+  <script>
+    window.__TRAINING__ = [];// placeholder
+  </script>
 </body>
 </html>
