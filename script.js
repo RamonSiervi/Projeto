@@ -14,7 +14,7 @@ closeModal.addEventListener('click', ()=> modal.classList.add('hidden'));
 const ENDPOINT_URL = "https://formspree.io/f/SEU_ENDPOINT"; // troque aqui pelo seu endpoint
 uploadForm.addEventListener('submit', async (e)=>{
   e.preventDefault();
-  statusBox.innerHTML = '<div class="spinner"></div><div>Enviando...</div>';
+  statusBox.textContent = "Enviando...";
 
   const formData = new FormData(uploadForm);
   try {
@@ -24,16 +24,12 @@ uploadForm.addEventListener('submit', async (e)=>{
       headers: { 'Accept': 'application/json' }
     });
     if(resp.ok){
-      statusBox.innerHTML = '<div class="success">✅ Enviado com sucesso!</div>';
+      statusBox.textContent = "✅ Enviado com sucesso!";
       uploadForm.reset();
-      setTimeout(()=>{
-        modal.classList.add('hidden');
-        statusBox.textContent = "";
-      },2000);
     }else{
-      statusBox.innerHTML = '<div class="error">❌ Erro ao enviar.</div>';
+      statusBox.textContent = "❌ Erro ao enviar.";
     }
   } catch(err){
-    statusBox.innerHTML = '<div class="error">❌ Falha de conexão.</div>';
+    statusBox.textContent = "❌ Falha de conexão.";
   }
 });

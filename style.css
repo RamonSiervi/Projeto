@@ -57,10 +57,4 @@ video{width:100%;border-radius:12px;background:#000}
 #uploadForm{display:grid;gap:12px}
 #uploadForm textarea{resize:vertical;min-height:60px;padding:8px;border-radius:8px;border:1px solid #ccc}
 #uploadForm input[type=file]{border:1px solid #ccc;padding:6px;border-radius:8px}
-#uploadStatus{margin-top:10px;font-size:14px;text-align:center}
-
-/* Feedback visual */
-.spinner{border:3px solid #f3f3f3;border-top:3px solid var(--primary);border-radius:50%;width:24px;height:24px;animation:spin 1s linear infinite;margin:0 auto;}
-@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
-.success{color:green;font-weight:600}
-.error{color:red;font-weight:600}
+#uploadStatus{margin-top:10px;font-size:14px}
