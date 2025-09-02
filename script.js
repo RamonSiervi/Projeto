@@ -1,335 +1,113 @@
 /* =========================================================
-   MFIT - v8 (base v5 + melhorias)
-   - Tema claro/escuro
-   - Exportar PDF **só texto**
-   - Upload de foto (Formspree) com spinner & auto-fechar
-   - Cada exercício em bloco único (fileira) e bem identado
+   MFIT - v9
    ========================================================= */
 
-// ===== Dados dos treinos (cada sessão separada) =====
+// ===== Dados dos treinos =====
 window.__TRAINING__ = [
-  // ===== TREINO DE QUADRÍCEPS =====
   {
     key: "quads",
     title: "Treino de Quadríceps",
     items: [
-      {
-        name: "Agachamento Sumô com Halteres",
-        series: "3x10/10/10 (Drop – faz tudo e conta como 1 série)",
-        carga: "0 kg",
-        intervalo: "60s",
-        video: "https://media.musclewiki.com/media/uploads/videos/branded/female-dumbbell-sumo-squat-front.mp4"
-      },
-      {
-        name: "Leg Press 45º",
-        series: "4x15 (pés colados) + 15 (afastados)",
-        carga: "12 kg",
-        intervalo: "40s",
-        video: "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-leg-press-front.mp4"
-      },
-      {
-        name: "Adução de Quadril Máquina",
-        series: "3x10/10/10 (Drop – faz tudo e conta como 1 série)",
-        carga: "0 kg",
-        intervalo: "60s",
-        video: "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-seated-leg-curl-side.mp4"
-      },
-      {
-        name: "Cadeira Flexorad",
-        series: "3x10/10/10 (Drop – faz tudo e conta como 1 série)",
-        carga: "0 kg",
-        intervalo: "60s",
-        video: null
-      },
-      {
-        name: "Cadeira Flexora Unilateral",
-        series: "3x10/10/10/10 (Drop – faz tudo e conta como 1 série)",
-        carga: "0 kg",
-        intervalo: "60s",
-        video: null
-      },
-      {
-        name: "Panturrilha no Step",
-        series: "4x15",
-        carga: "0 kg",
-        intervalo: "30s",
-        video: null
-      },
-      {
-        name: "Abdominal Canivete",
-        series: "4x15",
-        carga: "0 kg",
-        intervalo: "30s",
-        video: null
-      },
-      {
-        name: "Esteira Caminhada",
-        series: "30 reps",
-        carga: "",
-        intervalo: "",
-        video: null
-      }
+      { name:"Agachamento Sumô com Halteres", series:"3x10/10/10 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"60s", video:"https://media.musclewiki.com/media/uploads/videos/branded/female-dumbbell-sumo-squat-front.mp4" },
+      { name:"Leg Press 45º", series:"4x15 (pés colados) + 15 (afastados)", carga:"12 kg", intervalo:"40s", video:"https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-leg-press-front.mp4" },
+      { name:"Adução de Quadril Máquina", series:"3x10/10/10 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"60s", video:null },
+      { name:"Cadeira Flexorad", series:"3x10/10/10 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"60s", video:null },
+      { name:"Cadeira Flexora Unilateral", series:"3x10/10/10/10 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"60s", video:null },
+      { name:"Panturrilha no Step", series:"4x15", carga:"0 kg", intervalo:"30s", video:null },
+      { name:"Abdominal Canivete", series:"4x15", carga:"0 kg", intervalo:"30s", video:null },
+      { name:"Esteira Caminhada", series:"30 reps", carga:"", intervalo:"", video:null }
     ]
   },
-
-  // ===== TREINO DE POSTERIOR E GLÚTEO =====
   {
     key: "posterior",
     title: "Treino de Posterior e Glúteo",
     items: [
-      {
-        name: "Agachamento com Halteres",
-        series: "3x10+10+10 (Drop – faz tudo e conta como 1 série)",
-        carga: "0 kg",
-        intervalo: "60s",
-        video: null
-      },
-      {
-        name: "Abdução de Quadril Máquina",
-        series: "3x10+10+10 (Drop – faz tudo e conta como 1 série)",
-        carga: "0 kg",
-        intervalo: "60s",
-        video: null
-      },
-      {
-        name: "Elíptico",
-        series: "25 reps",
-        carga: "0 kg",
-        intervalo: "",
-        video: null
-      },
-      {
-        name: "Afundo com Barra Livre",
-        series: "3x12 • 3x10 • 2x8",
-        carga: "0 kg",
-        intervalo: "60s",
-        video: null
-      },
-      {
-        name: "Agachamento Sumô no Step com Halteres",
-        series: "3x10+10+10 (Drop – faz tudo e conta como 1 série)",
-        carga: "0 kg",
-        intervalo: "60s",
-        video: null
-      },
-      {
-        name: "Abdução de Quadril Máquina",
-        series: "3x10+10+10 (Drop – faz tudo e conta como 1 série)",
-        carga: "0 kg",
-        intervalo: "60s",
-        video: null
-      },
-      {
-        name: "Cadeira Extensora",
-        series: "3x10+10+10 (Drop – faz tudo e conta como 1 série)",
-        carga: "0 kg",
-        intervalo: "60s",
-        video: null
-      },
-      {
-        name: "Cadeira Extensora Unilateral",
-        series: "3x10+10+10 (Drop – faz tudo e conta como 1 série)",
-        carga: "0 kg",
-        intervalo: "60s",
-        video: null
-      },
-      {
-        name: "Leg Press 45º Unilateral",
-        series: "3x12 • 3x10 • 2x8",
-        carga: "0 kg",
-        intervalo: "60s",
-        video: null
-      }
+      { name:"Agachamento com Halteres", series:"3x10+10+10 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"60s", video:null },
+      { name:"Abdução de Quadril Máquina", series:"3x10+10+10 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"60s", video:null },
+      { name:"Elíptico", series:"25 reps", carga:"0 kg", intervalo:"", video:null },
+      { name:"Afundo com Barra Livre", series:"3x12 • 3x10 • 2x8", carga:"0 kg", intervalo:"60s", video:null },
+      { name:"Agachamento Sumô no Step com Halteres", series:"3x10+10+10 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"60s", video:null },
+      { name:"Abdução de Quadril Máquina", series:"3x10+10+10 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"60s", video:null },
+      { name:"Cadeira Extensora", series:"3x10+10+10 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"60s", video:null },
+      { name:"Cadeira Extensora Unilateral", series:"3x10+10+10 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"60s", video:null },
+      { name:"Leg Press 45º Unilateral", series:"3x12 • 3x10 • 2x8", carga:"0 kg", intervalo:"60s", video:null }
     ]
   },
-
-  // ===== TREINO DE PEITO, TRÍCEPS E BÍCEPS =====
   {
     key: "peito",
     title: "Treino de Peito, Tríceps e Bíceps",
     items: [
-      {
-        name: "Alongamento de Ombros e Tríceps II",
-        series: "3x20",
-        carga: "0 kg",
-        intervalo: "",
-        video: null
-      },
-      {
-        name: "Bike Spinning Sentada",
-        series: "40 reps",
-        carga: "",
-        intervalo: "",
-        video: null
-      },
-      {
-        name: "Abdominal Supra Solo",
-        series: "5x15",
-        carga: "0 kg",
-        intervalo: "40s",
-        video: null
-      },
-      {
-        name: "Tríceps Unilateral na Polia Alta (Pegada Neutra)",
-        series: "3x15",
-        carga: "0 kg",
-        intervalo: "30s",
-        video: null
-      },
-      {
-        name: "Alongamento de Peitoral Espaldar",
-        series: "3x15",
-        carga: "0 kg",
-        intervalo: "40s",
-        video: null
-      },
-      {
-        name: "Mobilidade de Ombro III",
-        series: "3x20",
-        carga: "0 kg",
-        intervalo: "",
-        video: null
-      },
-      {
-        name: "Rosca Alternada com Halteres",
-        series: "3x15",
-        carga: "0 kg",
-        intervalo: "30s",
-        video: null
-      },
-      {
-        name: "Tríceps na Polia com Corda",
-        series: "3x15 (Lento) + 15 (Curto)",
-        carga: "0 kg",
-        intervalo: "30s",
-        video: null
-      },
-      {
-        name: "Tríceps Unilateral na Polia Alta (Pegada Neutra)",
-        series: "3x15",
-        carga: "0 kg",
-        intervalo: "30s",
-        video: null
-      },
-      {
-        name: "Crucifixo com Halteres",
-        series: "4x12",
-        carga: "0 kg",
-        intervalo: "30s",
-        video: null
-      },
-      {
-        name: "Crucifixo Inclinado com Halteres",
-        series: "4x12",
-        carga: "0 kg",
-        intervalo: "30s",
-        video: null
-      },
-      {
-        name: "Rosca Martelo com Halteres",
-        series: "4x12",
-        carga: "0 kg",
-        intervalo: "30s",
-        video: null
-      }
+      { name:"Alongamento de Ombros e Tríceps II", series:"3x20", carga:"0 kg", intervalo:"", video:null },
+      { name:"Bike Spinning Sentada", series:"40 reps", carga:"", intervalo:"", video:null },
+      { name:"Abdominal Supra Solo", series:"5x15", carga:"0 kg", intervalo:"40s", video:null },
+      { name:"Tríceps Unilateral na Polia Alta (Pegada Neutra)", series:"3x15", carga:"0 kg", intervalo:"30s", video:null },
+      { name:"Alongamento de Peitoral Espaldar", series:"3x15", carga:"0 kg", intervalo:"40s", video:null },
+      { name:"Mobilidade de Ombro III", series:"3x20", carga:"0 kg", intervalo:"", video:null },
+      { name:"Rosca Alternada com Halteres", series:"3x15", carga:"0 kg", intervalo:"30s", video:null },
+      { name:"Tríceps na Polia com Corda", series:"3x15 (Lento) + 15 (Curto)", carga:"0 kg", intervalo:"30s", video:null },
+      { name:"Tríceps Unilateral na Polia Alta (Pegada Neutra)", series:"3x15", carga:"0 kg", intervalo:"30s", video:null },
+      { name:"Crucifixo com Halteres", series:"4x12", carga:"0 kg", intervalo:"30s", video:null },
+      { name:"Crucifixo Inclinado com Halteres", series:"4x12", carga:"0 kg", intervalo:"30s", video:null },
+      { name:"Rosca Martelo com Halteres", series:"4x12", carga:"0 kg", intervalo:"30s", video:null }
     ]
   },
-
-  // ===== TREINO DE OMBRO E COSTA =====
   {
     key: "ombro",
     title: "Treino de Ombro e Costa",
     items: [
-      {
-        name: "Puxada Alta (Pegada Neutra)",
-        series: "3x10/8/6 (Drop – faz tudo e conta como 1 série)",
-        carga: "0 kg",
-        intervalo: "30s",
-        video: null
-      },
-      {
-        name: "Abdominal Canivete",
-        series: "3x12",
-        carga: "0 kg",
-        intervalo: "30s",
-        video: null
-      },
-      {
-        name: "Esteira Caminhada",
-        series: "40 reps",
-        carga: "",
-        intervalo: "",
-        video: null
-      },
-      {
-        name: "Elevação Lateral Unilateral Sentado com Halteres",
-        series: "3x10/8/6 (Drop – faz tudo e conta como 1 série)",
-        carga: "0 kg",
-        intervalo: "30s",
-        video: null
-      },
-      {
-        name: "Elevação Frontal Alternada",
-        series: "3x12",
-        carga: "4 a 6 kg",
-        intervalo: "30s",
-        video: null
-      },
-      {
-        name: "Desenvolvimento com Halteres (Pegada Neutra)",
-        series: "3x10/8/6 (Drop – faz tudo e conta como 1 série)",
-        carga: "0 kg",
-        intervalo: "30s",
-        video: null
-      },
-      {
-        name: "Puxada Neutra Triângulo",
-        series: "3x10/8/6 (Drop – faz tudo e conta como 1 série)",
-        carga: "0 kg",
-        intervalo: "30s",
-        video: null
-      },
-      {
-        name: "Remada Baixa Triângulo",
-        series: "3x10/8/6 (Drop – faz tudo e conta como 1 série)",
-        carga: "0 kg",
-        intervalo: "30s",
-        video: null
-      },
-      {
-        name: "Puxada Aberta Barra Reta",
-        series: "3x10/8/6 (Drop – faz tudo e conta como 1 série)",
-        carga: "0 kg",
-        intervalo: "30s",
-        video: null
-      }
+      { name:"Puxada Alta (Pegada Neutra)", series:"3x10/8/6 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"30s", video:null },
+      { name:"Abdominal Canivete", series:"3x12", carga:"0 kg", intervalo:"30s", video:null },
+      { name:"Esteira Caminhada", series:"40 reps", carga:"", intervalo:"", video:null },
+      { name:"Elevação Lateral Unilateral Sentado com Halteres", series:"3x10/8/6 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"30s", video:null },
+      { name:"Elevação Frontal Alternada", series:"3x12", carga:"4 a 6 kg", intervalo:"30s", video:null },
+      { name:"Desenvolvimento com Halteres (Pegada Neutra)", series:"3x10/8/6 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"30s", video:null },
+      { name:"Puxada Neutra Triângulo", series:"3x10/8/6 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"30s", video:null },
+      { name:"Remada Baixa Triângulo", series:"3x10/8/6 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"30s", video:null },
+      { name:"Puxada Aberta Barra Reta", series:"3x10/8/6 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"30s", video:null }
     ]
   }
 ];
 
-// ===== Renderização =====
 const app = document.getElementById('app');
+const footerInfo = document.getElementById('footerInfo');
+
+function openSection(bodyEl){
+  bodyEl.classList.add('open');
+  bodyEl.style.maxHeight = bodyEl.scrollHeight + 'px';
+  bodyEl.style.opacity = 1;
+}
+function closeSection(bodyEl){
+  bodyEl.style.maxHeight = '0px';
+  bodyEl.style.opacity = 0;
+  bodyEl.addEventListener('transitionend', ()=> bodyEl.classList.remove('open'), {once:true});
+}
 
 function render(){
   app.innerHTML = "";
+  let total = 0;
   window.__TRAINING__.forEach(section => {
+    total += section.items.length;
     const wrap = document.createElement('section');
     wrap.className = `section ${section.key}`;
+
     wrap.innerHTML = `
       <div class="section-header">
         <div class="section-title">
-          <div class="badge">${section.title.split(' ').slice(0,1)[0][0]}</div>
+          <div class="badge">${section.title.split(' ')[0][0]}</div>
           <strong>${section.title}</strong>
         </div>
-        <div class="section-toggle">▼</div>
+        <div class="section-toggle" data-open="0">
+          <div class="pm">＋</div> <span>Mostrar</span>
+        </div>
       </div>
       <div class="section-body"></div>
     `;
-    const body = wrap.querySelector('.section-body');
 
-    section.items.forEach(ex => {
+    const body = wrap.querySelector('.section-body');
+    section.items.forEach(ex=>{
       const card = document.createElement('div');
       card.className = 'card';
+      card.dataset.name = ex.name.toLowerCase();
       card.innerHTML = `
         <div class="info">
           <h3>${ex.name}</h3>
@@ -344,29 +122,126 @@ function render(){
       body.appendChild(card);
     });
 
-    // toggle open/close
-    wrap.querySelector('.section-toggle').addEventListener('click',()=>{
-      body.style.display = body.style.display === 'none' ? 'grid' : 'none';
+    const toggle = wrap.querySelector('.section-toggle');
+    toggle.addEventListener('click', ()=>{
+      const opened = toggle.dataset.open === '1';
+      if(opened){
+        toggle.dataset.open = '0';
+        toggle.querySelector('.pm').textContent = '＋';
+        toggle.querySelector('span').textContent = 'Mostrar';
+        closeSection(body);
+      }else{
+        toggle.dataset.open = '1';
+        toggle.querySelector('.pm').textContent = '–';
+        toggle.querySelector('span').textContent = 'Ocultar';
+        openSection(body);
+      }
+      syncToggleAllButton();
     });
+
     app.appendChild(wrap);
   });
-}
 
+  footerInfo.textContent = `Total de seções: ${window.__TRAINING__.length} • Total de exercícios: ${total}`;
+}
 render();
 
-// ===== Tema claro/escuro =====
+const btnToggleAll = document.getElementById('btnToggleAll');
+function allOpen(){
+  document.querySelectorAll('.section').forEach(sec=>{
+    const toggle = sec.querySelector('.section-toggle');
+    const body = sec.querySelector('.section-body');
+    if(toggle.dataset.open !== '1'){
+      toggle.dataset.open = '1';
+      toggle.querySelector('.pm').textContent = '–';
+      toggle.querySelector('span').textContent = 'Ocultar';
+      openSection(body);
+    }
+  });
+}
+function allClose(){
+  document.querySelectorAll('.section').forEach(sec=>{
+    const toggle = sec.querySelector('.section-toggle');
+    const body = sec.querySelector('.section-body');
+    if(toggle.dataset.open !== '0'){
+      toggle.dataset.open = '0';
+      toggle.querySelector('.pm').textContent = '＋';
+      toggle.querySelector('span').textContent = 'Mostrar';
+      closeSection(body);
+    }
+  });
+}
+function anyClosed(){
+  return Array.from(document.querySelectorAll('.section .section-toggle'))
+    .some(t => t.dataset.open === '0');
+}
+function syncToggleAllButton(){
+  if(anyClosed()){
+    btnToggleAll.textContent = '＋ Expandir tudo';
+  }else{
+    btnToggleAll.textContent = '– Fechar tudo';
+  }
+}
+btnToggleAll.addEventListener('click', ()=>{
+  if(anyClosed()) allOpen(); else allClose();
+  syncToggleAllButton();
+});
+syncToggleAllButton();
+
+// Busca
+const searchInput = document.getElementById('searchInput');
+const clearSearch = document.getElementById('clearSearch');
+
+function applySearch(term){
+  const q = term.trim().toLowerCase();
+  let matches = 0;
+  document.querySelectorAll('.section').forEach(sec=>{
+    const body = sec.querySelector('.section-body');
+    const toggle = sec.querySelector('.section-toggle');
+    let sectionHas = 0;
+    body.querySelectorAll('.card').forEach(card=>{
+      const ok = !q || card.dataset.name.includes(q);
+      card.style.display = ok ? '' : 'none';
+      if(ok) sectionHas++;
+    });
+    if(sectionHas>0){
+      if(toggle.dataset.open !== '1'){
+        toggle.dataset.open = '1';
+        toggle.querySelector('.pm').textContent = '–';
+        toggle.querySelector('span').textContent = 'Ocultar';
+        openSection(body);
+      }
+      matches += sectionHas;
+      sec.style.display = '';
+    }else{
+      sec.style.display = q ? 'none' : '';
+      if(!q && toggle.dataset.open !== '0'){
+        toggle.dataset.open = '0';
+        toggle.querySelector('.pm').textContent = '＋';
+        toggle.querySelector('span').textContent = 'Mostrar';
+        closeSection(body);
+      }
+    }
+  });
+  syncToggleAllButton();
+  footerInfo.textContent = q
+    ? `Resultados: ${matches}`
+    : `Total de seções: ${window.__TRAINING__.length} • Total de exercícios: ${Array.from(document.querySelectorAll('.card')).length}`;
+}
+searchInput.addEventListener('input', e=> applySearch(e.target.value));
+clearSearch.addEventListener('click', ()=>{ searchInput.value=''; applySearch(''); searchInput.focus(); });
+
+// Tema
 document.getElementById('btnTheme').addEventListener('click', ()=>{
   const isDark = document.documentElement.classList.toggle('dark');
   localStorage.setItem('prefers-dark', isDark ? '1':'0');
 });
-// Persistir preferência
 if(localStorage.getItem('prefers-dark') === '1'){
   document.documentElement.classList.add('dark');
 }
 
-// ===== Exportar PDF (apenas texto) =====
+// PDF só texto + numeração
 document.getElementById('btnExport').addEventListener('click', ()=>{
-  // Monta um HTML temporário só com texto
   const container = document.createElement('div');
   container.style.padding = '12px';
   container.style.maxWidth = '800px';
@@ -376,11 +251,11 @@ document.getElementById('btnExport').addEventListener('click', ()=>{
     const s = document.createElement('div');
     s.style.margin = '8px 0 12px';
     s.innerHTML = `<h2 style="font-size:16px;margin:8px 0">${section.title}</h2>`;
-    section.items.forEach(ex=>{
+    section.items.forEach((ex, idx)=>{
       const item = document.createElement('div');
       item.style.margin = '0 0 8px';
       item.innerHTML = `
-        <div><strong>${ex.name}</strong></div>
+        <div><strong>${idx+1}. ${ex.name}</strong></div>
         <div>Séries: ${ex.series || '-'}</div>
         ${ex.carga ? `<div>Carga: ${ex.carga}</div>` : ""}
         ${ex.intervalo ? `<div>Intervalo: ${ex.intervalo}</div>` : ""}
@@ -389,47 +264,43 @@ document.getElementById('btnExport').addEventListener('click', ()=>{
     });
     container.appendChild(s);
   });
-
-  const opt = {
-    margin:       10,
-    filename:     'treino-texto.pdf',
-    html2canvas:  { scale: 2, useCORS: true },
-    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-  };
+  const opt = { margin:10, filename:'treino-texto.pdf', html2canvas:{scale:2,useCORS:true},
+                jsPDF:{unit:'mm',format:'a4',orientation:'portrait'} };
   html2pdf().from(container).set(opt).save();
 });
 
-// ===== Upload de Foto (Formspree) =====
+// Upload via Formspree
 const modal = document.getElementById('uploadModal');
 const btnUpload = document.getElementById('btnUpload');
 const closeModal = document.getElementById('closeModal');
 const uploadForm = document.getElementById('uploadForm');
 const statusBox = document.getElementById('uploadStatus');
+const ENDPOINT_URL = "https://formspree.io/f/SEU_ENDPOINT"; // troque
 
-btnUpload.addEventListener('click', ()=> modal.classList.remove('hidden'));
-closeModal.addEventListener('click', ()=> modal.classList.add('hidden'));
-
-// Trocar pelo seu endpoint do Formspree
-const ENDPOINT_URL = "https://formspree.io/f/SEU_ENDPOINT";
+function openModal(){
+  modal.classList.remove('hidden');
+  modal.setAttribute('aria-hidden','false');
+}
+function hideModal(){
+  modal.classList.add('hidden');
+  modal.setAttribute('aria-hidden','true');
+  statusBox.textContent = "";
+}
+btnUpload.addEventListener('click', openModal);
+closeModal.addEventListener('click', hideModal);
+modal.addEventListener('click', (e)=>{ if(e.target === modal) hideModal(); });
+document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && !modal.classList.contains('hidden')) hideModal(); });
 
 uploadForm.addEventListener('submit', async (e)=>{
   e.preventDefault();
   statusBox.innerHTML = '<div class="spinner"></div><div>Enviando...</div>';
-
   const formData = new FormData(uploadForm);
   try{
-    const resp = await fetch(ENDPOINT_URL, {
-      method: "POST",
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    });
+    const resp = await fetch(ENDPOINT_URL, { method:"POST", body: formData, headers:{'Accept':'application/json'} });
     if(resp.ok){
       statusBox.innerHTML = '<div class="success">✅ Enviado com sucesso!</div>';
       uploadForm.reset();
-      setTimeout(()=>{
-        modal.classList.add('hidden');
-        statusBox.textContent = "";
-      }, 2000);
+      setTimeout(()=> hideModal(), 2000);
     }else{
       statusBox.innerHTML = '<div class="error">❌ Erro ao enviar.</div>';
     }

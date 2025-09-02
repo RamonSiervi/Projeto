@@ -15,35 +15,45 @@
   <header class="app-header">
     <div class="brand">
       <div class="logo">MF</div>
-      <div>
+      <div class="brand-text">
         <div class="kicker">Plano de Treinos</div>
-        <h1>Organizado e detalhado</h1>
+        <h1>Organizado, limpo e responsivo</h1>
       </div>
     </div>
-    <div class="actions">
-      <button id="btnTheme" class="btn">🌙 Alternar Tema</button>
-      <button id="btnExport" class="btn primary">📄 Exportar PDF</button>
-      <button id="btnUpload" class="btn">📤 Enviar Foto</button>
+    <div class="toolbar">
+      <div class="row">
+        <button id="btnTheme" class="btn">🌙 Alternar Tema</button>
+        <button id="btnExport" class="btn primary">📄 Exportar PDF</button>
+        <button id="btnToggleAll" class="btn">＋ Expandir tudo</button>
+        <button id="btnUpload" class="btn">📤 Enviar Foto</button>
+      </div>
+      <div class="row">
+        <div class="search">
+          <span>🔍</span>
+          <input id="searchInput" type="search" placeholder="Buscar exercício..." autocomplete="off"/>
+          <button id="clearSearch" class="btn ghost">Limpar</button>
+        </div>
+      </div>
     </div>
   </header>
 
   <main id="app" class="container"></main>
 
   <footer class="app-footer">
-    <small>PDF exporta <strong>somente texto</strong>. Configure o endpoint do Formspree no <code>script.js</code>.</small>
+    <small id="footerInfo">Carregando...</small>
   </footer>
 
   <!-- Modal Upload -->
-  <div id="uploadModal" class="modal hidden">
-    <div class="modal-content">
-      <span id="closeModal" class="close">&times;</span>
+  <div id="uploadModal" class="modal hidden" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content" role="document">
+      <button id="closeModal" class="close" aria-label="Fechar">×</button>
       <h2>Enviar Foto</h2>
       <form id="uploadForm">
         <label>Observação:</label>
-        <textarea name="observacao" required></textarea>
+        <textarea name="observacao" placeholder="Ex.: Ajustar carga no leg press" required></textarea>
         <label>Foto:</label>
         <input type="file" name="foto" accept="image/*" required />
-        <button type="submit" class="btn primary">Enviar</button>
+        <button type="submit" class="btn primary full">Enviar</button>
       </form>
       <div id="uploadStatus"></div>
     </div>
