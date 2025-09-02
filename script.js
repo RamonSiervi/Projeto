@@ -32,7 +32,7 @@ window.__TRAINING__ = [
         series: "3x10/10/10 (Drop – faz tudo e conta como 1 série)",
         carga: "0 kg",
         intervalo: "60s",
-        video: null
+        video: "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-seated-leg-curl-side.mp4"
       },
       {
         name: "Cadeira Flexorad",
