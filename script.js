@@ -238,7 +238,7 @@ const btnUpload = document.getElementById('btnUpload');
 const closeModal = document.getElementById('closeModal');
 const uploadForm = document.getElementById('uploadForm');
 const statusBox = document.getElementById('uploadStatus');
-const ENDPOINT_URL = "https://formspree.io/f/SEU_ENDPOINT"; // troque pelo seu endpoint
+const ENDPOINT_URL = "https://formspree.io/f/mzzavnrq"; // troque pelo seu endpoint
 
 function openModal(){
   modal.classList.remove('hidden');
