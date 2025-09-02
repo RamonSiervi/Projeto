@@ -4,17 +4,17 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Plano de Treinos</title>
+<link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/svgs/solid/dumbbell.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css"/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script defer src="script.js"></script>
 </head>
 <body>
-  <header class="app-header">
+  <header class="app-header glass">
     <div class="brand">
-      <div class="logo">MF</div>
+      <div class="logo"><i class="fa-solid fa-dumbbell"></i></div>
       <div class="brand-text">
         <div class="kicker">Plano de Treinos</div>
         <h1>Organizado, limpo e responsivo</h1>
@@ -22,16 +22,14 @@
     </div>
     <div class="toolbar">
       <div class="row">
-        <button id="btnTheme" class="btn">🌙 Alternar Tema</button>
-        <button id="btnExport" class="btn primary">📄 Exportar PDF</button>
-        <button id="btnToggleAll" class="btn">＋ Expandir tudo</button>
-        <button id="btnUpload" class="btn">📤 Enviar Foto</button>
+        <button id="btnTheme" class="btn"><i class="fa-solid fa-moon"></i></button>
+        <button id="btnExport" class="btn primary"><i class="fa-solid fa-file-pdf"></i></button>
+        <button id="btnUpload" class="btn"><i class="fa-solid fa-upload"></i></button>
       </div>
       <div class="row">
         <div class="search">
-          <span>🔍</span>
-          <input id="searchInput" type="search" placeholder="Buscar exercício..." autocomplete="off"/>
-          <button id="clearSearch" class="btn ghost">Limpar</button>
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="searchInput" type="search" placeholder="Buscar..." autocomplete="off"/>
         </div>
       </div>
     </div>
@@ -44,13 +42,13 @@
   </footer>
 
   <!-- Modal Upload -->
-  <div id="uploadModal" class="modal hidden" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="modal-content" role="document">
-      <button id="closeModal" class="close" aria-label="Fechar">×</button>
+  <div id="uploadModal" class="modal hidden">
+    <div class="modal-content glass">
+      <button id="closeModal" class="close">×</button>
       <h2>Enviar Foto</h2>
       <form id="uploadForm">
         <label>Observação:</label>
-        <textarea name="observacao" placeholder="Ex.: Ajustar carga no leg press" required></textarea>
+        <textarea name="observacao" required></textarea>
         <label>Foto:</label>
         <input type="file" name="foto" accept="image/*" required />
         <button type="submit" class="btn primary full">Enviar</button>
