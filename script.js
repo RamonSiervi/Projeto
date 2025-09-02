@@ -10,12 +10,12 @@ window.__TRAINING__ = [
     items: [
       { name:"Agachamento Sumô com Halteres", series:"3x10/10/10 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"60s", video:"https://media.musclewiki.com/media/uploads/videos/branded/female-dumbbell-sumo-squat-front.mp4" },
       { name:"Leg Press 45º", series:"4x15 (pés colados) + 15 (afastados)", carga:"12 kg", intervalo:"40s", video:"https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-leg-press-front.mp4" },
-      { name:"Adução de Quadril Máquina", series:"3x10/10/10 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"60s", video:null },
-      { name:"Cadeira Flexorad", series:"3x10/10/10 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"60s", video:null },
-      { name:"Cadeira Flexora Unilateral", series:"3x10/10/10/10 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"60s", video:null },
-      { name:"Panturrilha no Step", series:"4x15", carga:"0 kg", intervalo:"30s", video:null },
-      { name:"Abdominal Canivete", series:"4x15", carga:"0 kg", intervalo:"30s", video:null },
-      { name:"Esteira Caminhada", series:"30 reps", carga:"", intervalo:"", video:null }
+      { name:"Adução de Quadril Máquina", series:"3x10/10/10 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"60s", video:"https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-hip-adduction-front.mp4" },
+      { name:"Cadeira Flexorad", series:"3x10/10/10 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"60s", video:"https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-seated-leg-curl-side.mp4" },
+      { name:"Cadeira Flexora Unilateral", series:"3x10/10/10/10 (Drop – faz tudo e conta como 1 série)", carga:"0 kg", intervalo:"60s", video:"https://media.musclewiki.com/media/uploads/videos/branded/machines/_1080/Seated_Leg_Curl_FR_1080.mp4" },
+      { name:"Panturrilha no Step", series:"4x15", carga:"0 kg", intervalo:"30s", video:"https://media.musclewiki.com/media/uploads/videos/branded/female-calves-stretch-variation-3-side.mp4" },
+      { name:"Abdominal Canivete", series:"4x15", carga:"0 kg", intervalo:"30s", video:"https://media.musclewiki.com/media/uploads/videos/branded/female-dumbbell-suitcase-crunch-side.mp4" },
+      { name:"Esteira Caminhada", series:"30 reps", carga:"", intervalo:"", video:"https://media.musclewiki.com/media/uploads/videos/branded/female-Cardio-treadmill-walk-side.mp4" }
     ]
   },
   {
