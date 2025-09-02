@@ -22,14 +22,14 @@
     </div>
     <div class="toolbar">
       <div class="row">
-        <button id="btnTheme" class="btn"><i class="fa-solid fa-moon"></i></button>
-        <button id="btnExport" class="btn primary"><i class="fa-solid fa-file-pdf"></i></button>
-        <button id="btnUpload" class="btn"><i class="fa-solid fa-upload"></i></button>
+        <button id="btnTheme" class="btn" title="Alternar tema"><i class="fa-solid fa-moon"></i></button>
+        <button id="btnExport" class="btn primary" title="Exportar PDF"><i class="fa-solid fa-file-pdf"></i></button>
+        <button id="btnUpload" class="btn" title="Enviar foto"><i class="fa-solid fa-upload"></i></button>
       </div>
       <div class="row">
         <div class="search">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input id="searchInput" type="search" placeholder="Buscar..." autocomplete="off"/>
+          <i id="searchIcon" class="fa-solid fa-magnifying-glass"></i>
+          <input id="searchInput" type="search" placeholder="Buscar exercício..." autocomplete="off"/>
         </div>
       </div>
     </div>
@@ -42,13 +42,13 @@
   </footer>
 
   <!-- Modal Upload -->
-  <div id="uploadModal" class="modal hidden">
-    <div class="modal-content glass">
-      <button id="closeModal" class="close">×</button>
+  <div id="uploadModal" class="modal hidden" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content glass" role="document">
+      <button id="closeModal" class="close" aria-label="Fechar">×</button>
       <h2>Enviar Foto</h2>
       <form id="uploadForm">
         <label>Observação:</label>
-        <textarea name="observacao" required></textarea>
+        <textarea name="observacao" placeholder="Ex.: Ajustar carga no leg press" required></textarea>
         <label>Foto:</label>
         <input type="file" name="foto" accept="image/*" required />
         <button type="submit" class="btn primary full">Enviar</button>
